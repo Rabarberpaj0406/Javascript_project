@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Knappar</title>
+    <link rel="stylesheet" href="Knapp_sida.css">
+</head>
+<body>
+   
+    <div id="Header_1">
+
+        <div id="Header_content">
+
+            <h2 id="Good_vibes"></h2>
+            <h5 id="Date_now"></h5>
+
+            <img id="Img_dice" src="png-transparent-dice-dice-1-image-file-formats-rectangle-dice-thumbnail.png" alt="Dice img" height="100px" width="100px">
+        
+        </div>
+
+    </div>
+
+    <div id ="Div_with_buttons">
+       
+        <div id="Row_1">
+            <button onclick="Background_change()" class="Buttons_class">Change bg</button>
+            <button onclick="Show_good_vibes()" class="Buttons_class">Good vibes</button>
+            <button onclick="Show_date()" class="Buttons_class">Time</button>
+        </div>
+
+        <div id="Row_2">
+            <button onclick="Img_change()" class="Buttons_class">Change picture</button>
+            <button onclick="Img_hide()" class="Buttons_class">Hide picture</button>
+            <button onclick="Img_show()" class="Buttons_class">Show picture</button>
+        </div>
+
+        <div id="Row_3">
+            <button onclick="Header_create()" class="Buttons_class">Header</button>
+            <button onclick="Header_remove()" class="Buttons_class">Remove header</button>
+            <button onclick="Header_show()" class="Buttons_class">Show header</button>
+        </div>
+
+    </div>
+
+    <script>
+
+        function Background_change()
+        {
+            document.body.style.backgroundColor = "cyan";
+        } 
+
+        function Show_good_vibes()
+        {
+            document.getElementById("Good_vibes").textContent = "Be the best version of you what you can be.";
+        }
+
+        function Show_date()
+        {
+            document.getElementById("Date_now").innerHTML = Date();
+        }
+
+        function Img_change()
+        {
+            document.getElementById("Img_dice").src = "png-transparent-material-rectangle-font-dice-1-rectangle-material-dice-1.png";
+        }
+
+        function Img_hide()
+        {
+            document.getElementById("Img_dice").style.visibility = "hidden";   
+        }
+
+        function Img_show()
+        {
+            document.getElementById("Img_dice").style.visibility = "visible"; 
+        }
+
+        function Header_create()
+        {
+            var Container = document.getElementById("Header_1");
+            var Content = document.getElementById("Header_content");
+
+            document.getElementById("Img_dice").style.border = "thick solid green";
+
+            Container.style.backgroundColor = "grey";
+
+            Content.style.textAlign= "center";
+        }
+
+        function Header_remove()
+        {
+            document.getElementById("Header_1").style.visibility = "hidden";
+            document.getElementById("Img_dice").style.visibility = "hidden";
+        }
+     
+        function Header_show()
+        {
+            document.getElementById("Header_1").style.visibility = "visible";
+            document.getElementById("Img_dice").style.visibility = "visible";
+        }
+
+    </script>
+
+</body>
+</html>
